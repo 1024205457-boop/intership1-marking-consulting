@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-research-workflow"
+version = "0.1.0"
+description = "AI辅助市场研究工作流：Brief→采集→分析→三元校验→报告"
+requires-python = ">=3.9"
+dependencies = [
+    "pyyaml>=6.0",
+    "jinja2>=3.1",
+    "jieba>=0.42",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+llm = ["openai>=1.0"]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
